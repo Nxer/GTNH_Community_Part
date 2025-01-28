@@ -22,12 +22,12 @@ public final class ModBlocksHandler {
     public static Pair<Block, Integer> VoidBlock;
     public static Pair<Block, Integer> ThauminiteBlock;
 
-    // endregion
+    // end region
 
     // region Thaumic Horizons
     public static Pair<Block, Integer> BlockCrystalDeep;
 
-    // endregion
+    // end region
 
     // region Automagy
     public static Pair<Block, Integer> BlockTranslucent;
@@ -38,31 +38,30 @@ public final class ModBlocksHandler {
     // region ThaumicBases
     public static Pair<Block, Integer> EldritchArk;
 
-    // endregion
+    // end region
 
     // region The Twilight Forest
     public static Pair<Block, Integer> TreeofTimeSapling;
     public static Pair<Block, Integer> FieryBlock;
 
-    // endregion
+    // end region
 
     // region Forestry
     public static Pair<Block, Integer> soil;
 
-    // endregion
+    // end region
 
     // region ProjRed|Illumination
     public static Pair<Block, Integer> PurpleLight;
 
-    // endregion
+    // end region
 
     // region Blood Arsenal
-
     public static Pair<Block, Integer> BloodInfusedDiamondBlock;
     public static Pair<Block, Integer> BloodInfusedIronBlock;
     public static Pair<Block, Integer> BloodInfusedGlowstone;
 
-    // endregion
+    // end region
 
     // region Chisel
     public static Pair<Block, Integer> BlockArcane_1;

@@ -102,10 +102,46 @@ public class ItemRegister {
         GTCMItemList.EnergyFluctuationSelfHarmonizer.set(initItem01("Energy Fluctuation Self-Harmonizer", 33));
         GTCMItemList.EncapsulatedMicroSpaceTimeUnit.set(initItem01("Encapsulated Micro SpaceTime Unit", 34));
         GTCMItemList.SeedsSpaceTime.set(initItem01("Seeds of Space and Time", 35));
-        GTCMItemList.WhiteDwarfMold_Ingot.set(initItem01("White Dwarf Mold(Ingot)", 36));
+
         // #tr MetaItem01.36.name
         // # White Dwarf Mold(Ingot)
         // #zh_CN 白矮星模具(锭)
+        GTCMItemList.WhiteDwarfMold_Ingot.set(initItem01("White Dwarf Mold(Ingot)", 36));
+
+        // #tr MetaItem01.37.name
+        // # Engraved Energy Exposed Chip
+        // #zh_CN 铭刻能量裸片
+        GTCMItemList.EngravedEnergyExposedChip.set(initItem01("Engraved Energy Exposed Chip", 37));
+
+        // #tr MetaItem01.38.name
+        // # Perfect Engraved Energy Chip
+        // #zh_CN 完美铭刻能量芯片
+        // #tr MetaItem01.38.tooltips.01
+        // # Excellent conductive chip
+        // #zh_CN 优秀的导能芯片
+        GTCMItemList.PerfectEngravedEnergyChip.set(initItem01("Perfect Engraved Energy Chip", 38,new String[]{ tr("MetaItem01.38.tooltips.01")}));
+
+        // #tr MetaItem01.39.name
+        // # Engraved Energy Laptron Chip
+        // #zh_CN 铭刻兰波顿裸片
+        GTCMItemList.EngravedLaptronExposedChip.set(initItem01("Engraved Energy Laptron Chip", 39));
+
+        // #tr MetaItem01.40.name
+        // # Perfect Engraved Laptron Chip
+        // #zh_CN 完美铭刻兰波顿芯片
+        // #tr MetaItem01.40.tooltips.01
+        // # Excellent energy storage chip
+        // #zh_CN 优秀的储能芯片
+        GTCMItemList.PerfectEngravedLaptronChip.set(initItem01("Perfect Engraved Laptron Chip", 40,new String[]{ tr("MetaItem01.40.tooltips.01")}));
+
+        // #tr MetaItem01.41.name
+        // # Ultimate Energy Flow Circuit
+        // #zh_CN 终极能量流电路
+        // #tr MetaItem01.41.tooltips.01
+        // # The ultimate choice for high-load circuits
+        // #zh_CN 高负载电路的终极选择
+        GTCMItemList.UltimateEnergyFlowCircuit.set(initItem01("Ultimate Energy Flow Circuit", 41,new String[]{ tr("MetaItem01.41.tooltips.01")}));
+
         if (Config.activateMegaSpaceStation) {
             GTCMItemList.HighDimensionalExtend.set(initItem01("High-dimensional extend", 176));
             GTCMItemList.HighDimensionalCircuitDoard.set(initItem01("High-dimensional circuit board", 177));

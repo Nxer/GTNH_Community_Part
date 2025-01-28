@@ -26,7 +26,7 @@ public class BasicBlocks {
     public static final Block SpaceTimeOscillator = new MetaStructureCasing("SpaceTimeOscillator");
     public static final Block SpaceTimeConstraintor = new MetaStructureCasing("SpaceTimeConstraintor");
     public static final Block SpaceTimeMerger = new MetaStructureCasing("SpaceTimeMerger");
-
+    public static final Block StabilisationFieldGenerator = new MetaStructureCasing("StabilisationFieldGenerator");
     public static final Block spaceStationStructureBlock = new SpaceStationStructureCasing(
         "SpaceStationStructureBlock",
         "Space Station Structure Block");
@@ -43,4 +43,5 @@ public class BasicBlocks {
     public static BlockTimeBendingSpeedRune timeBendingSpeedRune = new BlockTimeBendingSpeedRune();
 
     public static BlockMultiUseCore multiUseCore = new BlockMultiUseCore();
+    public static Block MetalBlock;
 }

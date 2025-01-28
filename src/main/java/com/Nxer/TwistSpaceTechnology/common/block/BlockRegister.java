@@ -7,6 +7,7 @@ import static com.Nxer.TwistSpaceTechnology.common.block.BasicBlocks.NuclearReac
 import static com.Nxer.TwistSpaceTechnology.common.block.BasicBlocks.PhotonControllerUpgrade;
 import static com.Nxer.TwistSpaceTechnology.common.block.BasicBlocks.SpaceStationAntiGravityBlock;
 import static com.Nxer.TwistSpaceTechnology.common.block.BasicBlocks.spaceStationStructureBlock;
+import static com.Nxer.TwistSpaceTechnology.system.Thaumcraft.TCBasic.TST_ID;
 
 import com.Nxer.TwistSpaceTechnology.common.GTCMItemList;
 import com.Nxer.TwistSpaceTechnology.common.block.blockClass.BlockStar;
@@ -21,6 +22,7 @@ import com.Nxer.TwistSpaceTechnology.common.block.blockClass.Casings.spaceStatio
 import com.Nxer.TwistSpaceTechnology.common.block.blockClass.ItemBlockBase01;
 import com.Nxer.TwistSpaceTechnology.common.block.blockClass.ItemBlockPowerChair;
 import com.Nxer.TwistSpaceTechnology.common.block.blockClass.MetaBlockBase;
+import com.Nxer.TwistSpaceTechnology.common.material.MaterialsTST;
 import com.Nxer.TwistSpaceTechnology.common.tile.TileArcaneHole;
 import com.Nxer.TwistSpaceTechnology.common.tile.TilePowerChair;
 import com.Nxer.TwistSpaceTechnology.common.tile.TileStar;
@@ -28,6 +30,11 @@ import com.Nxer.TwistSpaceTechnology.config.Config;
 import com.Nxer.TwistSpaceTechnology.util.TextEnums;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.Textures.BlockIcons.CustomIcon;
+import gregtech.api.interfaces.IIconContainer;
+import gregtech.common.blocks.BlockMetal;
 
 public class BlockRegister {
 
@@ -54,23 +61,32 @@ public class BlockRegister {
             BasicBlocks.SpaceTimeOscillator,
             MetaItemBlockCasing.class,
             BasicBlocks.SpaceTimeOscillator.getUnlocalizedName());
+
         GameRegistry.registerBlock(
             BasicBlocks.SpaceTimeConstraintor,
             MetaItemBlockCasing.class,
             BasicBlocks.SpaceTimeConstraintor.getUnlocalizedName());
+
         GameRegistry.registerBlock(
             BasicBlocks.SpaceTimeMerger,
             MetaItemBlockCasing.class,
             BasicBlocks.SpaceTimeMerger.getUnlocalizedName());
 
         GameRegistry.registerBlock(
+            BasicBlocks.StabilisationFieldGenerator,
+            MetaItemBlockCasing.class,
+            BasicBlocks.StabilisationFieldGenerator.getUnlocalizedName());
+
+        GameRegistry.registerBlock(
             spaceStationStructureBlock,
             SpaceStationStructureCasingItemBlock.class,
             spaceStationStructureBlock.getUnlocalizedName());
+
         GameRegistry.registerBlock(
             SpaceStationAntiGravityBlock,
             SpaceStationAntiGravityCasingItemBlock.class,
             SpaceStationAntiGravityBlock.getUnlocalizedName());
+
         GameRegistry.registerBlock(
             NuclearReactorBlock,
             BlockNuclearReactor.innerItemBlock.class,
@@ -89,6 +105,8 @@ public class BlockRegister {
     public static void registryBlockContainers() {
 
         GTCMItemList.TestMetaBlock01_0.set(ItemBlockBase01.initMetaBlock01("TestMetaBlock01_0", 0));
+
+        // Casing 01
         GTCMItemList.TestCasing
             .set(MetaBlockConstructors.initMetaBlockCasing("Test Casing", (byte) 0, BasicBlocks.MetaBlockCasing01));
         GTCMItemList.HighPowerRadiationProofCasing.set(
@@ -184,21 +202,21 @@ public class BlockRegister {
                 // #zh_CN 一个更比四个强
                 }));
 
-        GTCMItemList.DenseCyclotronOuterCasing.set(
+        GTCMItemList.DenseParticleProtectionCasing.set(
             MetaBlockConstructors.initMetaBlockCasing(
-                "Dense Cyclotron Outer Casing",
+                "Dense Particle Protection Casing",
                 // #tr MetaBlockCasing01.11.name
-                // # Dense Cyclotron Outer Casing
-                // #zh_CN 致密回旋加速器机械方块
+                // # Dense Particle protection Casing
+                // #zh_CN 致密粒子防护机械方块
                 (byte) 11,
                 BasicBlocks.MetaBlockCasing01));
 
-        GTCMItemList.CompactCyclotronCoil.set(
+        GTCMItemList.CompactHighSpeedParticleCoil.set(
             MetaBlockConstructors.initMetaBlockCasing(
-                "Compact Cyclotron Coil",
+                "Compact High-Speed Particle Coil",
                 // #tr MetaBlockCasing01.12.name
-                // # Compact Cyclotron Coil
-                // #zh_CN 压缩回旋加速器线圈
+                // # Compact High-Speed Particle Coil
+                // #zh_CN 压缩高速粒子线圈
                 (byte) 12,
                 BasicBlocks.MetaBlockCasing01));
 
@@ -230,6 +248,7 @@ public class BlockRegister {
                 // #zh_CN 比磐石更坚！
                 }));
 
+        // Casing 02
         GTCMItemList.BloodyCasing1.set(
             MetaBlockConstructors.initMetaBlockCasing(
                 "BloodyCasing1",
@@ -248,7 +267,7 @@ public class BlockRegister {
                 (byte) 1,
                 BasicBlocks.MetaBlockCasing02));
 
-        // region SpaceTimeOscillator
+        // SpaceTimeOscillator
 
         // #tr SpaceTimeOscillator.0.name
         // # SpaceTime Oscillator T1
@@ -271,9 +290,9 @@ public class BlockRegister {
             MetaBlockConstructors
                 .initMetaBlock("SpaceTime Oscillator T3", (byte) 2, (MetaBlockBase) BasicBlocks.SpaceTimeOscillator));
 
-        // endregion
+        // end region
 
-        // region SpaceTimeConstraintor
+        // SpaceTimeConstraintor
 
         // #tr SpaceTimeConstraintor.0.name
         // # SpaceTime Constraintor T1
@@ -302,9 +321,9 @@ public class BlockRegister {
                 (byte) 2,
                 (MetaBlockBase) BasicBlocks.SpaceTimeConstraintor));
 
-        // endregion
+        // end region
 
-        // region SpaceTimeMerger
+        // SpaceTimeMerger
 
         // #tr SpaceTimeMerger.0.name
         // # SpaceTime Merger T1
@@ -327,9 +346,92 @@ public class BlockRegister {
             MetaBlockConstructors
                 .initMetaBlock("SpaceTime Merger T3", (byte) 2, (MetaBlockBase) BasicBlocks.SpaceTimeMerger));
 
-        // endregion
+        // end region
 
-        // region PhotonControllerUpgrade
+        // Stabilisation Field Generator
+        GTCMItemList.StabilisationFieldGeneratorFramework.set(
+            MetaBlockConstructors.initMetaBlock(
+                "StabilisationFieldGeneratorFramework",
+                // #tr StabilisationFieldGenerator.0.name
+                // # Stabilisation Field Generator Framework
+                // #zh_CN 稳定力场发生器框架
+                (byte) 0,
+                (MetaBlockBase) BasicBlocks.StabilisationFieldGenerator,
+                new String[] { TextEnums.tr("Tooltip_StabilisationFieldGenerator.0") }
+            // #tr Tooltip_StabilisationFieldGenerator.0
+            // # The Beginning.
+            // #zh_CN 开始了.
+            ));
+
+        GTCMItemList.StabilisationFieldGeneratorUEV.set(
+            MetaBlockConstructors.initMetaBlock(
+                "StabilisationFieldGeneratorUEV",
+                // #tr StabilisationFieldGenerator.1.name
+                // # Stabilisation Field Generator UEV Tier
+                // #zh_CN 稳定力场发生器UEV
+                (byte) 1,
+                (MetaBlockBase) BasicBlocks.StabilisationFieldGenerator,
+                new String[] { TextEnums.tr("Tooltip_StabilisationFieldGenerator.1") }
+            // #tr Tooltip_StabilisationFieldGenerator.1
+            // # Very basic, isn't it?
+            // #zh_CN 很基础, 不是吗?
+            ));
+
+        GTCMItemList.StabilisationFieldGeneratorUIV.set(
+            MetaBlockConstructors.initMetaBlock(
+                "StabilisationFieldGeneratorUIV",
+                // #tr StabilisationFieldGenerator.2.name
+                // # Stabilisation Field Generator UIV Tier
+                // #zh_CN 稳定力场发生器UIV
+                (byte) 2,
+                (MetaBlockBase) BasicBlocks.StabilisationFieldGenerator,
+                new String[] { TextEnums.tr("Tooltip_StabilisationFieldGenerator.2") }
+            // #tr Tooltip_StabilisationFieldGenerator.2
+            // # Praise the Star！
+            // #zh_CN 赞美太阳!
+            ));
+
+        GTCMItemList.StabilisationFieldGeneratorUMV.set(
+            MetaBlockConstructors.initMetaBlock(
+                "StabilisationFieldGeneratorUMV",
+                // #tr StabilisationFieldGenerator.3.name
+                // # Stabilisation Field Generator UMV Tier
+                // #zh_CN 稳定力场发生器UMV
+                (byte) 3,
+                (MetaBlockBase) BasicBlocks.StabilisationFieldGenerator,
+                new String[] { TextEnums.tr("Tooltip_StabilisationFieldGenerator.3") }
+            // #tr Tooltip_StabilisationFieldGenerator.3
+            // # We Need to Go Deeper
+            // #zh_CN 我们需要再深入些.
+            ));
+
+        GTCMItemList.StabilisationFieldGeneratorUXV.set(
+            MetaBlockConstructors.initMetaBlock(
+                "StabilisationFieldGeneratorUXV",
+                // #tr StabilisationFieldGenerator.4.name
+                // # Stabilisation Field Generator UXV Tier
+                // #zh_CN 稳定力场发生器UXV
+                (byte) 4,
+                (MetaBlockBase) BasicBlocks.StabilisationFieldGenerator,
+                new String[] { TextEnums.tr("Tooltip_StabilisationFieldGenerator.4") }
+            // #tr Tooltip_StabilisationFieldGenerator.4
+            // # The End?
+            // #zh_CN 结束了?
+            ));
+
+        // end region
+
+        // MaterialBlock
+        BasicBlocks.MetalBlock = new BlockMetal(
+            "tst.blockmetal01",
+            new Materials[] { MaterialsTST.NeutroniumAlloy, MaterialsTST.AxonisAlloy, MaterialsTST.Axonium },
+            OrePrefixes.block,
+            new IIconContainer[] { new CustomIcon(TST_ID + ":MetaBlocks/BlockNeutroniumAlloy"),
+                new CustomIcon(TST_ID + ":MetaBlocks/BlockAxonisAlloy"),
+                new CustomIcon(TST_ID + ":MetaBlocks/BlockAxonium") });
+        // end region
+
+        // PhotonControllerUpgrade
         GTCMItemList.PhotonControllerUpgradeLV
             .set(PhotonControllerUpgradeCasing.photonControllerUpgradeCasingMeta("Photonic Intensifier LV Tier", 0));
         GTCMItemList.PhotonControllerUpgradeMV
@@ -358,9 +460,9 @@ public class BlockRegister {
             .set(PhotonControllerUpgradeCasing.photonControllerUpgradeCasingMeta("Photonic Intensifier UXV Tier", 12));
         GTCMItemList.PhotonControllerUpgradeMAX
             .set(PhotonControllerUpgradeCasing.photonControllerUpgradeCasingMeta("Photonic Intensifier MAX Tier", 13));
-        // endregion
+        // end region
         // ---------------------------------------------------------------------------------------------------------------------------//
-        // region MegaSpaceStation
+        // MegaSpaceStation
         if (Config.activateMegaSpaceStation) {
             GTCMItemList.spaceStationStructureBlockLV.set(
                 SpaceStationStructureCasing.SpaceStationStructureCasingMeta("spaceStationStructureBlock LV Tier", 0));
@@ -442,7 +544,7 @@ public class BlockRegister {
             // GTCMItemList.NuclearReactorStructure3.set(NuclearReactorBlockMeta("Nuclear Reactor structure block3",
             // 3));
         }
-        // endregion
+        // end region
     }
 
     public static void registry() {

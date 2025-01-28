@@ -380,6 +380,17 @@ public class GTCMRecipe {
         .disableOptimize()
         .build();
 
+    // #tr tst.recipe.DeployedNanoCoreRecipes
+    // # Nano Core
+    // #zh_CN 纳米核心
+    public static final RecipeMap<TST_RecipeMapBackend> DeployedNanoCoreRecipes = RecipeMapBuilder
+        .of("tst.recipe.DeployedNanoCoreRecipes", TST_RecipeMapBackend::new)
+        .maxIO(6, 2, 3, 0)
+        .neiHandlerInfo(builder -> builder.setDisplayStack(GTCMItemList.DeployedNanoCore.get(1)))
+        .progressBar(GTUITextures.PROGRESSBAR_ASSEMBLE)
+        .disableOptimize()
+        .build();
+
     // #tr tst.recipe.IndustrialAlchemyTowerRecipe
     // # Industrial Alchemy Tower
     // #zh_CN 工业炼金塔

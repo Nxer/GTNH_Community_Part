@@ -11,6 +11,7 @@ import com.Nxer.TwistSpaceTechnology.common.api.ModBlocksHandler;
 import com.Nxer.TwistSpaceTechnology.common.api.ModItemsHandler;
 import com.Nxer.TwistSpaceTechnology.common.crop.CropLoader;
 import com.Nxer.TwistSpaceTechnology.common.machine.singleBlock.hatch.GT_Hatch_RackComputationMonitor;
+import com.Nxer.TwistSpaceTechnology.common.material.MaterialFix;
 import com.Nxer.TwistSpaceTechnology.config.Config;
 import com.Nxer.TwistSpaceTechnology.devTools.PathHelper;
 import com.Nxer.TwistSpaceTechnology.loader.LazyStaticsInitLoader;
@@ -127,6 +128,7 @@ public class TwistSpaceTechnology {
         CropLoader.registerBaseSeed();
 
         TCLoader.load();
+        MaterialFix.load();
     }
 
     @Mod.EventHandler

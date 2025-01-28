@@ -156,9 +156,16 @@ public enum GTCMItemList {
     Rune_of_Perdition,
     PowerChair,
     PrimitiveMansSpaceTimeDistortionDevice,
-    BallLightningUpgradeChip,
-    HatchUpdateTool,
     WirelessUpdateItem,
+    BallLightningUpgradeChip,
+    WhiteDwarfMold_Ingot,
+    EngravedEnergyExposedChip,
+    PerfectEngravedEnergyChip,
+    EngravedLaptronExposedChip,
+    PerfectEngravedLaptronChip,
+    UltimateEnergyFlowCircuit,
+
+    HatchUpdateTool,
     FountOfEcology,
     OffSpring,
 
@@ -196,6 +203,8 @@ public enum GTCMItemList {
     PhotonControllerUpgradeUMV,
     PhotonControllerUpgradeUXV,
     PhotonControllerUpgradeMAX,
+
+    // Casing 01
     HighPowerRadiationProofCasing,
     AdvancedHighPowerCoilBlock,
     ParallelismCasing0,
@@ -206,12 +215,15 @@ public enum GTCMItemList {
     AntiMagneticCasing,
     ReinforcedStoneBrickCasing,
     CompositeFarmCasing,
-    DenseCyclotronOuterCasing,
-    CompactCyclotronCoil,
+    DenseParticleProtectionCasing,
+    CompactHighSpeedParticleCoil,
     AsepticGreenhouseCasing,
     ReinforcedBedrockCasing,
+
+    // Casing 02
     BloodyCasing1,
     BloodyCasing2,
+
     // endregion
 
     // region Machines
@@ -366,7 +378,6 @@ public enum GTCMItemList {
     EncapsulatedMicroSpaceTimeUnit,
     SeedsSpaceTime,
     MicroSpaceTimeFabricatorio,
-    WhiteDwarfMold_Ingot,
 
     // endregion
 
@@ -399,7 +410,11 @@ public enum GTCMItemList {
     SpaceTimeMergerT1,
     SpaceTimeMergerT2,
     SpaceTimeMergerT3,
-
+    StabilisationFieldGeneratorFramework,
+    StabilisationFieldGeneratorUEV,
+    StabilisationFieldGeneratorUIV,
+    StabilisationFieldGeneratorUMV,
+    StabilisationFieldGeneratorUXV,
     // endregion
 
     // region single block Machines
