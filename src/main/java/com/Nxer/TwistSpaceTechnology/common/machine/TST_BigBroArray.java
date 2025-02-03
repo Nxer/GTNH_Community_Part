@@ -9,7 +9,7 @@ import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
-import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
+import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gregtech.common.misc.WirelessNetworkManager.addEUToGlobalEnergyMap;
 
 import java.lang.reflect.Field;
@@ -53,6 +53,7 @@ import com.Nxer.TwistSpaceTechnology.network.TST_Network;
 import com.Nxer.TwistSpaceTechnology.util.TextEnums;
 import com.Nxer.TwistSpaceTechnology.util.TextLocalization;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.gtnewhorizon.structurelib.alignment.constructable.ISurvivalConstructable;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.ISurvivalBuildEnvironment;
@@ -109,6 +110,7 @@ import gregtech.api.util.GTStructureUtility;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.HatchElementBuilder;
 import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.api.util.recipe.Scanning;
 import gregtech.common.blocks.BlockCasingsAbstract;
 import gregtech.common.tileentities.machines.MTEHatchCraftingInputME;
 import gregtech.common.tileentities.machines.MTEHatchInputBusME;
@@ -2026,7 +2028,7 @@ public class TST_BigBroArray extends TT_MultiMachineBase_EM
 
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.ParallelismCasing0.get(1))
-            .metadata(RESEARCH_TIME, 4 * HOURS)
+            .metadata(SCANNING, new Scanning(4 * HOURS, TierEU.LV))
             .itemInputs(
                 ItemList.Field_Generator_ZPM.get(2),
                 ItemList.Casing_StableTitanium.get(1),
@@ -2045,7 +2047,7 @@ public class TST_BigBroArray extends TT_MultiMachineBase_EM
 
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.ParallelismCasing1.get(1))
-            .metadata(RESEARCH_TIME, 8 * HOURS)
+            .metadata(SCANNING, new Scanning(8 * HOURS, TierEU.RECIPE_LV))
             .itemInputs(
                 ItemList.Field_Generator_UHV.get(4),
                 ItemList.Casing_CleanStainlessSteel.get(1),
@@ -2101,7 +2103,7 @@ public class TST_BigBroArray extends TT_MultiMachineBase_EM
                 tectech.thing.CustomItemList.TimeAccelerationFieldGeneratorTier2.get(4), ItemList.Robot_Arm_UXV.get(16),
                 ItemList.Emitter_UXV.get(16),
                 GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 8),
-                com.dreammaster.item.ItemList.QuantumCircuit.getIS(4) },
+                NHItemList.QuantumCircuit.getIS(4) },
             new FluidStack[] { MaterialsUEVplus.SpaceTime.getMolten(9216) },
             GTCMItemList.ParallelismCasing4.get(1),
             20 * 1200,

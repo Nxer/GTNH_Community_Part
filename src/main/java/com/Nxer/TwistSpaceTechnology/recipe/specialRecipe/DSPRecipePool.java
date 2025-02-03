@@ -33,7 +33,7 @@ import static gregtech.api.enums.TierEU.RECIPE_UXV;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
-import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
+import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.ASTRAL_TITANIUM;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.HYPOGEN;
@@ -65,7 +65,6 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.gtnewhorizons.gtnhintergalactic.recipe.IGRecipeMaps;
 
-import galaxyspace.core.register.GSBlocks;
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -74,11 +73,13 @@ import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.interfaces.IRecipeMap;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -115,7 +116,7 @@ public class DSPRecipePool implements IRecipePool {
         // DSP Ray Receiving Station
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, DSPLauncher.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 ItemList.ZPM3.get(1),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 64),
@@ -134,7 +135,7 @@ public class DSPRecipePool implements IRecipePool {
 
                 SpaceWarper.get(64),
                 new ItemStack(IGBlocks.SpaceElevatorCasing, 64),
-                new ItemStack(GSBlocks.DysonSwarmBlocks, 64, 9))
+                new ItemStack(IGBlocks.DysonSwarmCasing, 64, 9))
             .fluidInputs(
                 new FluidStack(solderPlasma, 144 * 8192),
                 Materials.UUMatter.getFluid(1000 * 1024),
@@ -149,7 +150,7 @@ public class DSPRecipePool implements IRecipePool {
         // DSP Launch Site machine
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, new ItemStack(GCBlocks.landingPad, 1, 0))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 new ItemStack(GCBlocks.landingPad, 64),
                 GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 64),
@@ -169,7 +170,7 @@ public class DSPRecipePool implements IRecipePool {
                 GTUtility.copyAmountUnsafe(64, LightWeightPlate),
                 eM_Power.get(64),
                 new ItemStack(IGBlocks.SpaceElevatorCasing, 64),
-                new ItemStack(GSBlocks.DysonSwarmBlocks, 64, 9))
+                new ItemStack(IGBlocks.DysonSwarmCasing, 64, 9))
             .fluidInputs(
                 new FluidStack(solderPlasma, 144 * 8192),
                 Materials.UUMatter.getFluid(1000 * 128),
@@ -225,7 +226,7 @@ public class DSPRecipePool implements IRecipePool {
         // ArtificialStar
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, AnnihilationConstrainer.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 StellarConstructionFrameMaterial.get(64),
                 eM_Spacetime.get(64),
@@ -960,7 +961,7 @@ public class DSPRecipePool implements IRecipePool {
         // Oscillator T1
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, AntimatterFuelRod.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Ultimate_Containment_Field.get(1),
                 GregtechItemList.SpaceTimeContinuumRipper.get(1),
@@ -983,7 +984,7 @@ public class DSPRecipePool implements IRecipePool {
         // Oscillator T2
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeOscillatorT1.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Ultimate_Containment_Field.get(4),
                 GregtechItemList.SpaceTimeContinuumRipper.get(4),
@@ -1006,7 +1007,7 @@ public class DSPRecipePool implements IRecipePool {
         // Oscillator T3
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeOscillatorT2.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Ultimate_Containment_Field.get(16),
                 GregtechItemList.SpaceTimeContinuumRipper.get(16),
@@ -1029,7 +1030,7 @@ public class DSPRecipePool implements IRecipePool {
         // Constraintor T1
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, ParticleTrapTimeSpaceShield.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Teleportation.get(1),
                 GregtechItemList.SpaceTimeContinuumRipper.get(1),
@@ -1052,7 +1053,7 @@ public class DSPRecipePool implements IRecipePool {
         // Constraintor T2
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeConstraintorT1.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Teleportation.get(4),
                 GregtechItemList.SpaceTimeContinuumRipper.get(4),
@@ -1075,7 +1076,7 @@ public class DSPRecipePool implements IRecipePool {
         // Constraintor T3
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeConstraintorT2.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Teleportation.get(16),
                 GregtechItemList.SpaceTimeContinuumRipper.get(16),
@@ -1098,7 +1099,7 @@ public class DSPRecipePool implements IRecipePool {
         // Merger T1
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.HIGGS_BOSON))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Spacetime.get(4),
                 GregtechItemList.SpaceTimeContinuumRipper.get(1),
@@ -1121,7 +1122,7 @@ public class DSPRecipePool implements IRecipePool {
         // Merger T2
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeMergerT1.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Spacetime.get(16),
                 GregtechItemList.SpaceTimeContinuumRipper.get(4),
@@ -1144,7 +1145,7 @@ public class DSPRecipePool implements IRecipePool {
         // Merger T3
         GTValues.RA.stdBuilder()
             .metadata(RESEARCH_ITEM, GTCMItemList.SpaceTimeMergerT2.get(1))
-            .metadata(RESEARCH_TIME, 24 * HOURS)
+            .metadata(SCANNING, new Scanning(24 * HOURS, TierEU.LV))
             .itemInputs(
                 eM_Spacetime.get(64),
                 GregtechItemList.SpaceTimeContinuumRipper.get(16),
